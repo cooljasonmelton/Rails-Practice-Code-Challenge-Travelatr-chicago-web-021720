@@ -9,6 +9,12 @@
 
 <%= form_for @post do |f| %>
     <label> Blogger:
+    <!-- Three things: 1) be careful about calling model logic straight from the view,
+    better to put that work in the controller and set an @ivar
+    2) You are calling your fields according to objects instead of foreign keys to those objects
+    and blogger_id/destination_id would be easier to work with in the controller
+    3) if you're indeed trying to set an id, return a two-item array from your map:
+    Blogger.all.map {|b| [b.name, b.id] } otherwise the name will both get passed as the value *and* displayed to the user in the dropdown-->
     <%= f.select :blogger, Blogger.all.map {|b| b.name }%></label><br>
     <label> Destination:
     <%= f.select :destination, Destination.all.map {|b| b.name }%></label><br>

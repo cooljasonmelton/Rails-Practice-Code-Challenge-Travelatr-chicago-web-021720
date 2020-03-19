@@ -5,6 +5,7 @@ class BloggersController < ApplicationController
     end 
 
     def create
+      # Really nice work here. good conventional flow
         @blogger = Blogger.new(get_params)
         if @blogger.valid?
             @blogger.save
