@@ -17,6 +17,7 @@ class PostsController < ApplicationController
     end 
 
     private
+    # I'd call this post_params instead, once you get to it
     def get_params
     end 
 

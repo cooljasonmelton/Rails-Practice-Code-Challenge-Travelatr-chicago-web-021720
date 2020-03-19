@@ -1,10 +1,12 @@
 <h1> Create a Blogger </h1>
 
+<!-- Nice conditional here, glad the error messages are guiding me to valid data! -->
 <% if @errors %>
   <% @errors.each do |e| %>
     <h2><%= e %> </h2>
   <% end  %>
 <% end  %>
+<!-- form syntax is on point but your indentation could be a little cleaner, make sure the end lines up with the start next time -->
 <%= form_for @blogger do |f| %>
     <p><label> Name:
     <%= f.text_field :name %></label></p><br>
